@@ -6,6 +6,7 @@ namespace BlockchainTest.Models
     public class Blockchain
     {
         public IList<Block> Chain { set; get; }
+        public int Difficulty { set; get; } = 2;
 
         public Blockchain()
         {
@@ -39,7 +40,7 @@ namespace BlockchainTest.Models
             Block latestBlock = GetLatestBlock();
             block.Index = latestBlock.Index + 1;
             block.PreviousHash = latestBlock.Hash;
-            block.Hash = block.CalculateHash();
+            block.Mine(this.Difficulty);
             Chain.Add(block);
         }
 
