@@ -21,7 +21,6 @@ namespace BlockchainTest.Models
             TimeStamp = timeStamp;
             PreviousHash = previousHash;
             Transactions = transactions;
-            Hash = CalculateHash();
         }
 
 

@@ -8,18 +8,18 @@ namespace BlockchainTest.Models
         public IList<Block> Chain { set; get; }
         public int Difficulty { set; get; } = 2;
         public int Reward = 1;
-        List<Transaction> PendingTransactions = new List<Transaction>();
+        public List<Transaction> PendingTransactions = new List<Transaction>();
 
         public Blockchain()
         {
-            InitializeChain();
-            AddGenesisBlock();
+
         }
 
 
         public void InitializeChain()
         {
             Chain = new List<Block>();
+            AddGenesisBlock();
         }
 
         public Block CreateGenesisBlock()
